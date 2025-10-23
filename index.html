@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T Website</title>
+<link rel="icon" type="image/png" href="Capture.PNG">
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #cce5ff, #e6f0ff);
+  color: #003366;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+details {
+  background: white;
+  border: 2px solid #0066cc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 45%;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button, .game-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, .game-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 250px;
+  padding: 30px 15px;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.box h3 {
+  color: #0056b3;
+  font-size: 1.8em;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+#contact {
+  margin-top: 50px;
+  background-color: #e6f2ff;
+  padding: 25px;
+  border-top: 2px solid #99ccff;
+}
+
+#contact h2 {
+  color: #003d80;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  font-size: 1.1em;
+  margin: 6px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#ranking {
+  background-color: #f0f7ff;
+  margin: 50px auto;
+  padding: 20px;
+  width: 60%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#ranking h2 {
+  color: #0056b3;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#rankTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.2em;
+}
+
+#rankTable th {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+#rankTable td {
+  background: white;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+#rankTable tr:hover td {
+  background-color: #e8f3ff;
+}
+
+.form-button {
+  margin-top: 25px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-button:hover {
+  background-color: #003d80;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<h1><span style="color:#0066cc">T Website</span></h1>
+<p>Hello 👋<br>This is my website</p>
+
+<details>
+  <summary>About the web</summary>
+  <p>This website was created by <b>Tony</b> to showcase fun projects like games, calculators, and timers!</p>
+</details>
+
+<button type="button" onclick="sayHello()">Click Me!</button>
+
+<div class="box-container"> 
+  <div class="box"> 
+    <h3>🎮 Game Zone</h3>
+     <p>Play fun games and test your skills!</p> 
+     <a href="gamezone.html" class="game-button">Enter Game Zone</a>
+     </div>
+   <div class="box"> 
+    <h3>🧮 Calculator</h3> 
+    <p>Use a simple calculator for quick math.</p> 
+    <a href="calculator.html" class="game-button">Open Calculator</a> 
+  </div> 
+  <div class="box"> 
+    <h3>🕒 Timer</h3> 
+    <p>Browse cool timer with multiple mode here.</p>
+     <a href="timer.html" class="game-button">Timer</a> 
+    </div> 
+  </div> 
+
+<section id="ranking">
+  <h2>🏆 Most Used Projects</h2>
+  <table id="rankTable">
+    <tr>
+      <th>Rank</th>
+      <th>Project</th>
+      <th>Usage Count</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>🎮 Game Zone</td>
+      <td id="gameCount">12</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>🧮 Calculator</td>
+      <td id="calcCount">9</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>🕒 Timer</td>
+      <td id="timerCount">7</td>
+    </tr>
+  </table>
+  <button class="form-button" onclick="openForm()">📊 Submit Usage Form</button>
+  <p style="font-size: 0.9em;">You can submit which project you used to help update weekly rankings.</p>
+</section>
+
+<!-- Pie Chart Section -->
+<div class="ranking-chart" style="width: 400px; margin: 40px auto;">
+  <canvas id="projectChart"></canvas>
+</div>
+
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Pie Chart Section -->
+<div class="ranking-chart" style="width: 400px; margin: 40px auto;">
+  <canvas id="projectChart"></canvas>
+</div>
+
+<!-- Chart.js and Data Labels Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+<script>
+  // Example data — update manually each week
+  const projectData = [12, 9, 7];
+  const total = projectData.reduce((a, b) => a + b, 0);
+
+  const data = {
+    labels: ["Game Zone", "Calculator", "Timer"],
+    datasets: [{
+      data: projectData,
+      backgroundColor: [
+        "#5C6BFF",  // Game Zone
+        "#FF0099",  // Calculator
+        "#2AA198"   // Timer
+      ],
+      borderWidth: 2
+    }]
+  };
+
+  const config = {
+    type: "doughnut",
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "left",
+          labels: { color: "#000", font: { size: 14 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const value = context.raw;
+              const percentage = ((value / total) * 100).toFixed(0);
+              return `${context.label}: ${percentage}% (${value})`;
+            }
+          }
+        },
+        datalabels: {
+          color: "#000",
+          font: { weight: "bold", size: 14 },
+          formatter: (value) => `${((value / total) * 100).toFixed(0)}%`
+        }
+      },
+      cutout: "65%"
+    },
+    plugins: [ChartDataLabels]
+  };
+
+  new Chart(document.getElementById("projectChart"), config);
+</script>
+
+<p style="text-align:center; font-size:1.2em; color:#0066cc; margin-top:0;">
+📊 Data last updated weekly based on form submissions.
+</p>
+
+
+<section id="contact">
+  <h2>📞 Contact Me</h2>
+  <p><b>Full Name:</b> Nguyen Minh Quan</p>
+  <p><b>Email:</b> tony.nmq@gmail.com</p>
+  <p><b>Phone:</b> +84 399 002 579</p>
+</section>
+
+<script>
+function sayHello() {
+  alert("🔥 Wassup! I'm the best coder in the world! 🔥");
+}
+
+function openForm() {
+  // Opens your Microsoft Form in a new tab
+  window.open("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=0XHIlzG5xUqIMvlT87UwU0qIuWRcXA9EjW80OrTTutRUNDJMQ0RUSTVSNVpFUVVCSDBXSUoyNVhHRC4u", "_blank");
+}
+
+// Local display for fun (manual update)
+function updateRanking() {
+  document.getElementById('gameCount').textContent = localStorage.getItem('Game ZoneCount') || 12;
+  document.getElementById('calcCount').textContent = localStorage.getItem('CalculatorCount') || 9;
+  document.getElementById('timerCount').textContent = localStorage.getItem('TimerCount') || 7;
+}
+updateRanking();
+</script>
+
+</body>
+</html>
