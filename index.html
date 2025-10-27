@@ -34,6 +34,24 @@ details {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+button.click-me {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.click-me:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+
 button, .game-button {
   background-color: #007bff;
   color: white;
@@ -169,7 +187,8 @@ a {
   <p>This website was created by <b>Tony</b> to showcase fun projects like games, calculators, and timers!</p>
 </details>
 
-<button type="button" onclick="sayHello()">Click Me!</button>
+<button type="button" class="click-me" onclick="sayHello()">Click Me!</button>
+
 
 <div class="box-container"> 
   <div class="box"> 
@@ -217,25 +236,21 @@ a {
   <p style="font-size: 0.9em;">You can submit which project you used to help update weekly rankings.</p>
 </section>
 
-<!-- Pie Chart Section -->
 <div class="ranking-chart" style="width: 400px; margin: 40px auto;">
   <canvas id="projectChart"></canvas>
 </div>
 
-<!-- Chart.js Library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Pie Chart Section -->
 <div class="ranking-chart" style="width: 400px; margin: 40px auto;">
   <canvas id="projectChart"></canvas>
 </div>
 
-<!-- Chart.js and Data Labels Plugin -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
 <script>
-  // Example data — update manually each week
+
   const projectData = [12, 9, 7];
   const total = projectData.reduce((a, b) => a + b, 0);
 
@@ -244,9 +259,9 @@ a {
     datasets: [{
       data: projectData,
       backgroundColor: [
-        "#5C6BFF",  // Game Zone
-        "#FF0099",  // Calculator
-        "#2AA198"   // Timer
+        "#5C6BFF",  
+        "#FF0099",  
+        "#2AA198"   
       ],
       borderWidth: 2
     }]
@@ -303,11 +318,10 @@ function sayHello() {
 }
 
 function openForm() {
-  // Opens your Microsoft Form in a new tab
+
   window.open("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=0XHIlzG5xUqIMvlT87UwU0qIuWRcXA9EjW80OrTTutRUNDJMQ0RUSTVSNVpFUVVCSDBXSUoyNVhHRC4u", "_blank");
 }
 
-// Local display for fun (manual update)
 function updateRanking() {
   document.getElementById('gameCount').textContent = localStorage.getItem('Game ZoneCount') || 12;
   document.getElementById('calcCount').textContent = localStorage.getItem('CalculatorCount') || 9;
