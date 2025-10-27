@@ -251,7 +251,7 @@ a {
 
 <script>
 
-  const projectData = [12, 9, 7];
+  const projectData = [14, 9, 7];
   const total = projectData.reduce((a, b) => a + b, 0);
 
   const data = {
@@ -323,7 +323,7 @@ function openForm() {
 }
 
 function updateRanking() {
-  document.getElementById('gameCount').textContent = localStorage.getItem('Game ZoneCount') || 12;
+  document.getElementById('gameCount').textContent = localStorage.getItem('Game ZoneCount') || 14;
   document.getElementById('calcCount').textContent = localStorage.getItem('CalculatorCount') || 9;
   document.getElementById('timerCount').textContent = localStorage.getItem('TimerCount') || 7;
 }
@@ -332,3 +332,4 @@ updateRanking();
 
 </body>
 </html>
+
